@@ -1,6 +1,6 @@
 import { Store } from "./store.js";
 import { $, toast, setView, card, renderProgress } from "./ui.js";
-import { loadData, getOptionsForStep } from "./dataloader.js";
+import { loadData, getOptionsForStep } from "./dataLoader.js";
 import { sendSelections, formatSelectionsText } from "./email.js";
 
 const store = new Store();
