@@ -14,46 +14,14 @@ export async function sendSelections({ toEmail, text }) {
   inFlight = true;
 
   try {
-    // Prefer EmailJS if SDK is loaded and IDs are present
-    if (
-      window.emailjs &&
-      EMAILJS_SERVICE_ID !== "service_zp1nkp9" &&
-      EMAILJS_TEMPLATE_ID !== "template_2v8rq75"
-    ) {
-      const payload = {
-        to_email: toEmail || EMAIL_TO,
-        selections_text: text || ""
-      };
-
       const res = await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         payload
       );
 
-      if (res && (res.status === 200 || res.text === "OK")) {
-        inFlight = false;
-        return true;
-      }
-    }
-
-    // Fallback: Formspree (optional)
-    // To use: create a Formspree form and replace YOUR_FORM_ID below.
-    const FORMSPREE_FORM_ID = "YOUR_FORM_ID";
-    if (FORMSPREE_FORM_ID !== "YOUR_FORM_ID") {
-      const resp = await fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
-        method: "POST",
-        headers: { Accept: "application/json", "Content-Type": "application/json" },
-        body: JSON.stringify({
-          selections_text: text || ""
-        }),
-      });
       inFlight = false;
-      return resp.ok;
-    }
-
-    inFlight = false;
-    return false;
+      return res && (res.status === 200 || res.text === "OK");
   } catch (e) {
     inFlight = false;
     return false;

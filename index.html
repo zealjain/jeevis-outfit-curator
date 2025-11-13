@@ -66,16 +66,21 @@
   <!-- Toasts -->
   <div id="toast" role="status" aria-live="polite"></div>
 
-  <!-- EmailJS SDK + init (public key only) -->
+  <!-- Confetti canvas overlay -->
+  <canvas id="confetti" aria-hidden="true"></canvas>
+  
+  <!-- keep this EmailJS block if you already added it -->
   <script src="https://cdn.emailjs.com/sdk/3.11.0/email.min.js"></script>
   <script>
-    // Replace with your real public key from EmailJS
     (function () {
       if (window.emailjs) {
-        emailjs.init("YOUR_PUBLIC_KEY");
+        emailjs.init("Uzy-qUkqXNfzO11OP");
       }
     })();
   </script>
+  
+  <!-- Module entry point -->
+  <script type="module" src="js/app.js"></script>
 
   <!-- Scripts -->
   <script type="module" src="js/app.js"></script>

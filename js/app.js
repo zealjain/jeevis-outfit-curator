@@ -2,6 +2,7 @@ import { Store } from "./store.js";
 import { $, toast, setView, card, renderProgress } from "./ui.js";
 import { loadData, getOptionsForStep } from "./dataLoader.js";
 import { sendSelections, formatSelectionsText } from "./email.js";
+import { confettiOnce, confettiCelebrate } from "./ui.js";
 
 const store = new Store();
 let DATA = null;
@@ -126,6 +127,7 @@ async function submit() {
 
   if (ok) {
     setView("view-success");
+    confettiCelebrate();
     announce("Your selections are saved.");
     document.getElementById("restartBtn")?.focus();
   } else {
@@ -171,6 +173,8 @@ function wireEvents(){
   if (stepIndex === 0 && !Object.values(selections).some(Boolean)) {
     setView("view-landing");
     document.getElementById("startBtn")?.focus();
+    // Party sprinkle on landing
+    confettiOnce();
   } else {
     setView("view-quiz");
     updateQuizView();
