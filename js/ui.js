@@ -15,13 +15,24 @@ export function renderProgress(stepIndex, total){
 export function card(option, isSelected, onSelect){
   const div = document.createElement("div");
   div.className = "card" + (isSelected ? " selected" : "");
-  div.innerHTML = `
+  div.tabIndex = 0;                           // focusable container
+  div.setAttribute("role","group");
+  div.setAttribute("aria-label", `${option.name}`);  div.innerHTML = `
     <img src="${option.img}" alt="Photo of ${option.name}">
     <div class="body">
       <div class="name">${option.name}</div>
       <div class="desc">${option.desc}</div>
-      <button class="btn" aria-pressed="${isSelected}">${isSelected ? "Chosen" : "Pick this"}</button>
-    </div>`;
+        <button class="btn" aria-pressed="${isSelected}">${isSelected ? "Chosen" : "Pick this"}</button>
+      </div>`;
   div.querySelector("button").addEventListener("click", onSelect);
+  const btn = div.querySelector("button");
+  btn.addEventListener("click", onSelect);
+  // Keyboard: Enter/Space on the card triggers select too
+  div.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      onSelect();
+    }
+  });
   return div;
 }
