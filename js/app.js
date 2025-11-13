@@ -162,6 +162,10 @@ function wireEvents(){
 
 (async function init() {
   wireEvents();
+  
+  // Always reset localStorage on full reload
+  store.clearStorage();
+  
   try {
     DATA = await loadData();
   } catch (e) {
