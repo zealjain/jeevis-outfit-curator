@@ -121,9 +121,7 @@ async function submit() {
   const text = formatSelectionsText(state.selections, DATA);
   const ok = await sendSelections({
     toEmail: "zeal.jain110@gmail.com",
-    subject: "Jeevi's 23rd Outfit Selections",
-    text,
-    json: JSON.stringify(state.selections),
+    text
   });
 
   if (ok) {
