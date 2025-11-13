@@ -1,0 +1,62 @@
+{
+    "steps": [
+      {
+        "id": "top",
+        "title": "Choose a Top",
+        "blurb": "Start strong—like espresso for your outfit.",
+        "options": [
+          { "id": "top-1", "name": "Silk Camisole", "img": "https://images.unsplash.com/photo-1520975922284-3193a2e3f9b7?w=800&q=80", "desc": "Soft blush silk with subtle shine—effortlessly chic." },
+          { "id": "top-2", "name": "Cropped Blazer", "img": "https://images.unsplash.com/photo-1516822003754-cca485356ecb?w=800&q=80", "desc": "Structured, power-cute, pairs with literally everything." },
+          { "id": "top-3", "name": "Ribbed Knit", "img": "https://images.unsplash.com/photo-1542060748-10c28b62716a?w=800&q=80", "desc": "Cozy, fitted, and selfie-approved for any plan." },
+          { "id": "top-4", "name": "Satin One-Shoulder", "img": "https://images.unsplash.com/photo-1558769132-cb1aea458c5c?w=800&q=80", "desc": "Party-ready sheen with drama on standby." }
+        ],
+        "dependencies": {}
+      },
+      {
+        "id": "bottom",
+        "title": "Choose a Bottom",
+        "blurb": "Balance is key. Also: pockets.",
+        "options": [
+          { "id": "bottom-1", "name": "High-Waisted Trousers", "img": "https://images.unsplash.com/photo-1520975922284-3193a2e3f9b7?w=800&q=80", "desc": "Tailored comfort, leg-lengthening, pockets that thrill." },
+          { "id": "bottom-2", "name": "Pleated Midi Skirt", "img": "https://images.unsplash.com/photo-1520975922284-3193a2e3f9b7?w=800&q=80", "desc": "Swishy, flirty, spins like a rom-com montage." },
+          { "id": "bottom-3", "name": "Black Straight Jeans", "img": "https://images.unsplash.com/photo-1520975922284-3193a2e3f9b7?w=800&q=80", "desc": "Timeless, flattering, late-night snack compatible." },
+          { "id": "bottom-4", "name": "Satin Slip Skirt", "img": "https://images.unsplash.com/photo-1520975922284-3193a2e3f9b7?w=800&q=80", "desc": "Slinky movement with quiet luxury vibes." }
+        ],
+        "dependencies": {
+          "top-1": ["bottom-2","bottom-1","bottom-4","bottom-3"],
+          "top-2": ["bottom-1","bottom-3","bottom-2","bottom-4"]
+        }
+      },
+      {
+        "id": "accessory",
+        "title": "Choose an Accessory",
+        "blurb": "The plot twist your outfit deserves.",
+        "options": [
+          { "id": "acc-1", "name": "Mini Crossbody", "img": "https://images.unsplash.com/photo-1555529771-35a38ca1b5fb?w=800&q=80", "desc": "Hands-free so you can hold surprises." },
+          { "id": "acc-2", "name": "Beaded Clutch", "img": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&q=80", "desc": "Sparkly sidekick for dance-floor diplomacy." },
+          { "id": "acc-3", "name": "Silk Scarf", "img": "https://images.unsplash.com/photo-1552323353-6f6f6d2a3b62?w=800&q=80", "desc": "Instant French auntie energy—bonjour compliments." },
+          { "id": "acc-4", "name": "Statement Belt", "img": "https://images.unsplash.com/photo-1616844868473-d6b9b9e4f47f?w=800&q=80", "desc": "Snatches waists and gasps. Icon behavior." }
+        ],
+        "dependencies": {}
+      },
+      {
+        "id": "jewelry",
+        "title": "Choose Jewelry",
+        "blurb": "Final sparkle. Main-character energy, activated.",
+        "options": [
+          { "id": "j-1", "name": "Gold Huggies", "img": "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?w=800&q=80", "desc": "Delicate hoops that whisper ‘main character.’" },
+          { "id": "j-2", "name": "Layered Necklace", "img": "https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?w=800&q=80", "desc": "Stacked shine; gives neckline a promotion." },
+          { "id": "j-3", "name": "Tennis Bracelet", "img": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80", "desc": "Classic sparkle—serves looks and aces." },
+          { "id": "j-4", "name": "Pearl Studs", "img": "https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?w=800&q=80", "desc": "Elegant, timeless, totally ‘23 going on iconic.’" }
+        ],
+        "dependencies": {}
+      }
+    ],
+    "jokes": [
+      "Outfits don’t make the person—but they definitely RSVP for you.",
+      "Fashion tip: if it has pockets, it’s already iconic.",
+      "Warning: selections may cause mirror selfies.",
+      "Shine so bright, the paparazzi file a ticket."
+    ]
+  }
+  
