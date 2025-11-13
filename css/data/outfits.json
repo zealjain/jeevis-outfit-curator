@@ -44,17 +44,17 @@
         "title": "Choose Jewelry",
         "blurb": "Final sparkle. Main-character energy, activated.",
         "options": [
-          { "id": "j-1", "name": "Gold Huggies", "img": "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?w=800&q=80", "desc": "Delicate hoops that whisper ‘main character.’" },
+          { "id": "j-1", "name": "Gold Huggies", "img": "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?w=800&q=80", "desc": "Delicate hoops that whisper 'main character.'" },
           { "id": "j-2", "name": "Layered Necklace", "img": "https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?w=800&q=80", "desc": "Stacked shine; gives neckline a promotion." },
           { "id": "j-3", "name": "Tennis Bracelet", "img": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80", "desc": "Classic sparkle—serves looks and aces." },
-          { "id": "j-4", "name": "Pearl Studs", "img": "https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?w=800&q=80", "desc": "Elegant, timeless, totally ‘23 going on iconic.’" }
+          { "id": "j-4", "name": "Pearl Studs", "img": "https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?w=800&q=80", "desc": "Elegant, timeless, totally '23 going on iconic.'" }
         ],
         "dependencies": {}
       }
     ],
     "jokes": [
-      "Outfits don’t make the person—but they definitely RSVP for you.",
-      "Fashion tip: if it has pockets, it’s already iconic.",
+      "Outfits don't make the person—but they definitely RSVP for you.",
+      "Fashion tip: if it has pockets, it's already iconic.",
       "Warning: selections may cause mirror selfies.",
       "Shine so bright, the paparazzi file a ticket."
     ]

@@ -7,10 +7,6 @@ const store = new Store();
 let DATA = null;
 
 const jokesRotator = (idx) => DATA?.jokes?.[idx % (DATA.jokes.length || 1)] || "";
-const store = new Store();
-let DATA = null;
-
-const jokesRotator = (idx) => DATA?.jokes?.[idx % (DATA.jokes.length || 1)] || "";
 
 function announce(msg) {
   const sr = document.getElementById("srStatus");
