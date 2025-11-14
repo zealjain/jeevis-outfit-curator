@@ -120,19 +120,30 @@ function goToSummary(){
 async function submit() {
   const state = store.get();
   const text = formatSelectionsText(state.selections, DATA);
-  const ok = await sendSelections({
+  const result = await sendSelections({
     toEmail: "zeal.jain110@gmail.com",
-    text
+    subject: "Jeevi's 23rd Outfit Selections",
+    text,
+    json: JSON.stringify(state.selections),
   });
 
-  if (ok) {
+  if (result.ok) {
     setView("view-success");
     confettiCelebrate();
     announce("Your selections are saved.");
     document.getElementById("restartBtn")?.focus();
   } else {
-    toast("Eek—glitter spill! Try again in a sec.");
-    announce("Submission failed. Try again.");
+    // Friendlier user toast + console detail for you
+    console.warn("[Email] failed:", result.error);
+    let hint = "";
+    if (result.error === "emailjs_sdk_missing") hint = " (SDK not loaded)";
+    else if (result.error === "ids_not_configured") hint = " (Service/Template IDs)";
+    else if (result.error === "auth_or_key_invalid") hint = " (Public key / auth)";
+    else if (result.error === "service_or_template_not_found") hint = " (Service/Template ID typo)";
+    else if (result.error === "template_vars_invalid") hint = " (Template variables)";
+    else if (result.error === "origin_not_allowed") hint = " (Add your domain in EmailJS Security)";
+    toast("Eek—glitter spill! Try again in a sec." + hint);
+    announce("Submission failed. " + (hint ? hint.replace(/[()]/g, "") : "Try again."));
   }
 }
 

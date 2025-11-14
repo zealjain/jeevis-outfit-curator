@@ -106,7 +106,8 @@ body {
 }
 
 .card .name {
-  font-weight: 600
+  font-weight: 600;
+  text-align: center;
 }
 
 .card .desc {
@@ -177,15 +178,16 @@ body {
 .theme-pastel {
   --bg: #fff7fb;
   --accent: #e879f9;
-  --accent2: #fbbf24;
-  --ring: #a78bfa
+  --accent2: #fb24f7;
+  --ring: #ffa7d3;
 }
 
 .theme-minimal {
-  --accent: #fafafa;
+  --text: #fafafa;
+  --accent2: #fafafa;
   --bg: #111827;
-  --accent2: #6b7280;
-  --ring: #111827
+  --accent: #9ea8bb;
+  --ring: rgb(74, 79, 91);
 }
 
 /* Screen-reader only utility */
