@@ -75,8 +75,9 @@
   <script>
     (function () {
       if (window.emailjs) {
-        // ⚠️ replace this with your real public key
-        emailjs.init("Uzy-qUkqXNfzO11OP");
+        emailjs.init({
+          publicKey: "Uzy-qUkqXNfzO11OP",
+        });
         console.log("EmailJS initialized:", window.emailjs ? "yes" : "no");
       } else {
         console.warn("EmailJS script not loaded yet");
