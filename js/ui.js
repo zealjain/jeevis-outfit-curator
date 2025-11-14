@@ -12,30 +12,35 @@ export function renderProgress(stepIndex, total){
   $("#progressText").textContent = `Step ${stepIndex+1} of ${total}`;
   $("#barFill").style.width = `${((stepIndex+1)/total)*100}%`;
 }
-export function card(option, isSelected, onSelect){
+
+export function card(option, isSelected, onSelect) {
   const div = document.createElement("div");
   div.className = "card" + (isSelected ? " selected" : "");
-  div.tabIndex = 0;                           // focusable container
-  div.setAttribute("role","group");
-  div.setAttribute("aria-label", `${option.name}`);  div.innerHTML = `
+  div.tabIndex = 0; // make it keyboard focusable
+  div.setAttribute("role", "button");
+  div.setAttribute("aria-pressed", isSelected);
+  div.setAttribute("aria-label", `${option.name}: ${option.desc}`);
+
+  div.innerHTML = `
     <img src="${option.img}" alt="Photo of ${option.name}">
     <div class="body">
       <div class="name">${option.name}</div>
       <div class="desc">${option.desc}</div>
-        <button class="btn" aria-pressed="${isSelected}">${isSelected ? "Chosen" : "Pick this"}</button>
-      </div>`;
-  div.querySelector("button").addEventListener("click", onSelect);
-  const btn = div.querySelector("button");
-  btn.addEventListener("click", onSelect);
-  // Keyboard: Enter/Space on the card triggers select too
+    </div>
+  `;
+
+  // Click or keyboard triggers selection
+  div.addEventListener("click", onSelect);
   div.addEventListener("keydown", (e) => {
-  if (e.key === "Enter" || e.key === " ") {
+    if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
       onSelect();
     }
   });
+
   return div;
 }
+
 
 // --- Confetti Engine (no deps) ------------------------------------
 const Confetti = (() => {

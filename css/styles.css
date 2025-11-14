@@ -87,11 +87,22 @@ body {
   background: var(--card);
   box-shadow: var(--shadow);
   overflow: hidden;
-  border: 2px solid transparent
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
 }
-
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+.card:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow);
+}
 .card.selected {
-  border-color: var(--ring)
+  border-color: var(--ring);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent2);
 }
 
 .card img {
