@@ -8,25 +8,25 @@
         {
           "id": "top-1",
           "name": "Top 1",
-          "img": "assets/graphics/Jeevi%20bday%20curators%20FOLDER/TOP%201.png",
+          "img": "assets/graphics/TOP%201.png",
           "desc": "Clean lines with an editorial edge."
         },
         {
           "id": "top-2",
           "name": "Top 2",
-          "img": "assets/graphics/Jeevi%20bday%20curators%20FOLDER/TOP%202.png",
+          "img": "assets/graphics/TOP%202.png",
           "desc": "Minimal, sharp, camera-ready."
         },
         {
           "id": "top-3",
           "name": "Top 3",
-          "img": "assets/graphics/Jeevi%20bday%20curators%20FOLDER/TOP%203.png",
+          "img": "assets/graphics/TOP%203.png",
           "desc": "Soft structure, high gloss."
         },
         {
           "id": "top-4",
           "name": "Top 4",
-          "img": "assets/graphics/Jeevi%20bday%20curators%20FOLDER/TOP%204%20FULL.png",
+          "img": "assets/graphics/TOP%204%20FULL.png",
           "desc": "Statement silhouette, cover-worthy."
         }
       ],
@@ -40,25 +40,25 @@
         {
           "id": "bottom-1",
           "name": "Bottom 1",
-          "img": "assets/graphics/Jeevi%20bday%20curators%20FOLDER/BOTTOMS%201.png",
+          "img": "assets/graphics/BOTTOMS%201.png",
           "desc": "Tailored and timeless."
         },
         {
           "id": "bottom-2",
           "name": "Bottom 2",
-          "img": "assets/graphics/Jeevi%20bday%20curators%20FOLDER/BOTTOMS%202.png",
+          "img": "assets/graphics/BOTTOMS%202.png",
           "desc": "Swishy, flirty, editor-approved."
         },
         {
           "id": "bottom-3",
           "name": "Bottom 3",
-          "img": "assets/graphics/Jeevi%20bday%20curators%20FOLDER/BOTTOMS%203.png",
+          "img": "assets/graphics/BOTTOMS%203.png",
           "desc": "Classic cut with modern attitude."
         },
         {
           "id": "bottom-4",
           "name": "Bottom 4",
-          "img": "assets/graphics/Jeevi%20bday%20curators%20FOLDER/BOTTOMS%204.png",
+          "img": "assets/graphics/BOTTOMS%204.png",
           "desc": "Slinky movement, luxe finish."
         }
       ],
@@ -72,25 +72,25 @@
         {
           "id": "acc-1",
           "name": "Accessory 1",
-          "img": "assets/graphics/Jeevi%20bday%20curators%20FOLDER/ACC%201.png",
+          "img": "assets/graphics/ACC%201.png",
           "desc": "Hands-free polish."
         },
         {
           "id": "acc-2",
           "name": "Accessory 2",
-          "img": "assets/graphics/Jeevi%20bday%20curators%20FOLDER/ACC%202.png",
+          "img": "assets/graphics/ACC%202.png",
           "desc": "Sparkle with subtle bite."
         },
         {
           "id": "acc-3",
           "name": "Accessory 3",
-          "img": "assets/graphics/Jeevi%20bday%20curators%20FOLDER/ACC%203.png",
+          "img": "assets/graphics/ACC%203.png",
           "desc": "French-girl flourish."
         },
         {
           "id": "acc-4",
           "name": "Accessory 4",
-          "img": "assets/graphics/Jeevi%20bday%20curators%20FOLDER/ACC%204.png",
+          "img": "assets/graphics/ACC%204.png",
           "desc": "Waist-snatching statement."
         }
       ],
