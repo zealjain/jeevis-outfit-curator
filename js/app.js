@@ -6,6 +6,18 @@ import { confettiOnce, confettiCelebrate } from "./ui.js";
 
 const store = new Store();
 let DATA = null;
+let dataPromise = null;
+
+async function ensureData() {
+  if (DATA) return DATA;
+  if (!dataPromise) {
+    dataPromise = loadData().then(d => {
+      DATA = d;
+      return d;
+    });
+  }
+  return dataPromise;
+}
 
 const jokesRotator = (idx) => DATA?.jokes?.[idx % (DATA.jokes.length || 1)] || "";
 
@@ -56,7 +68,9 @@ function wireGridArrows() {
   });
 }
 
-function updateQuizView(){
+function updateQuizView() {
+  if (!DATA) return; // guard if called too early
+
   const { stepIndex, selections } = store.get();
   const step = DATA.steps[stepIndex];
   // header
@@ -147,49 +161,99 @@ async function submit() {
   }
 }
 
-function wireEvents(){
-  $("#startBtn").addEventListener("click", () => { setView("view-quiz"); updateQuizView(); });
-  $("#backBtn").addEventListener("click", () => { store.back(); updateQuizView(); });
-  $("#nextBtn").addEventListener("click", () => {
-    const { stepIndex } = store.get();
-    if (stepIndex === DATA.steps.length - 1) { goToSummary(); }
-    else { store.next(DATA.steps.length); updateQuizView(); }
-  });
-  $("#submitBtn").addEventListener("click", async () => {
-    $("#submitBtn").disabled = true; $("#submitBtn").textContent = "Working the magic…";
-    await submit();
-    $("#submitBtn").disabled = false; $("#submitBtn").textContent = "Lock It In";
-  });
-  $("#restartBtn").addEventListener("click", () => { store.reset(); setView("view-landing"); });
-  $("#themeToggle").addEventListener("click", () => {
-    const order = ["theme-pastel","theme-party","theme-minimal"];
-    const cur = order.find(c => document.body.classList.contains(c));
-    const next = order[(order.indexOf(cur)+1)%order.length];
-    document.body.classList.remove(...order);
-    document.body.classList.add(next);
-    toast(next.replace("theme-","Theme: "));
-  });
+function wireEvents() {
+  const startBtn   = document.getElementById("startBtn");
+  const backBtn    = document.getElementById("backBtn");
+  const nextBtn    = document.getElementById("nextBtn");
+  const submitBtn  = document.getElementById("submitBtn");
+  const restartBtn = document.getElementById("restartBtn");
+
+  if (startBtn) {
+    startBtn.addEventListener("click", async () => {
+      await ensureData(); 
+      setView("view-quiz");
+      updateQuizView();
+    });
+  }
+
+  if (backBtn) {
+    backBtn.addEventListener("click", () => {
+      store.back();
+      updateQuizView();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      const { stepIndex } = store.get();
+      if (!DATA) return;
+      if (stepIndex === DATA.steps.length - 1) {
+        // go to summary
+        const { selections } = store.get();
+        const list = document.getElementById("summaryList");
+        list.innerHTML = "";
+        for (const step of DATA.steps) {
+          const chosen = step.options.find(o => o.id === selections[step.id]);
+          const div = document.createElement("div");
+          div.className = "card";
+          div.innerHTML = `
+            <img src="${chosen?.img || ""}" alt="Photo of ${chosen?.name || ""}">
+            <div class="body">
+              <div class="name">${step.title}</div>
+              <div class="desc">${chosen ? chosen.name : "No selection"}</div>
+              <button class="btn link" data-step="${step.id}">Change ${step.id}</button>
+            </div>`;
+          div.querySelector("button").addEventListener("click", () => {
+            const idx = DATA.steps.findIndex(s => s.id === step.id);
+            store.set({ stepIndex: idx });
+            setView("view-quiz");
+            updateQuizView();
+          });
+          list.appendChild(div);
+        }
+        setView("view-summary");
+      } else {
+        store.next(DATA.steps.length);
+        updateQuizView();
+      }
+    });
+  }
+
+  if (submitBtn) {
+    submitBtn.addEventListener("click", async () => {
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Working the magic…";
+      await submit();
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Lock It In";
+    });
+  }
+
+  if (restartBtn) {
+    restartBtn.addEventListener("click", () => {
+      store.reset();
+      store.clearStorage?.();
+      setView("view-landing");
+      document.getElementById("startBtn")?.focus();
+    });
+  }
+
 }
 
 (async function init() {
-  wireEvents();
-  
-  // Always reset localStorage on full reload
-  store.clearStorage();
-  
   try {
-    DATA = await loadData();
+    await ensureData(); // load data before binding and rendering
   } catch (e) {
     toast("Steaming fresh looks… (loading failed)");
     return;
   }
 
+  wireEvents();
+
   const { stepIndex, selections } = store.get();
   if (stepIndex === 0 && !Object.values(selections).some(Boolean)) {
     setView("view-landing");
     document.getElementById("startBtn")?.focus();
-    // Party sprinkle on landing
-    confettiOnce();
   } else {
     setView("view-quiz");
     updateQuizView();
