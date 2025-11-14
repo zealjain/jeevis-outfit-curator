@@ -225,3 +225,19 @@ body {
   outline: 3px solid var(--ring);
   outline-offset: 2px;
 }
+
+#view-summary {
+  text-align: center;
+}
+
+#view-summary #submitBtn {
+  display: inline-block;
+  margin: 24px auto 8px auto;
+}
+
+#view-summary .privacy {
+  text-align: center;
+  margin-top: 6px;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
