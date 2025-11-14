@@ -69,12 +69,16 @@
   <!-- Confetti canvas overlay -->
   <canvas id="confetti" aria-hidden="true"></canvas>
   
-  <!-- keep this EmailJS block if you already added it -->
+  <!-- EmailJS SDK -->
   <script src="https://cdn.emailjs.com/sdk/3.11.0/email.min.js"></script>
   <script>
     (function () {
       if (window.emailjs) {
+        // ⚠️ replace this with your real public key
         emailjs.init("Uzy-qUkqXNfzO11OP");
+        console.log("EmailJS initialized:", window.emailjs ? "yes" : "no");
+      } else {
+        console.warn("EmailJS script not loaded yet");
       }
     })();
   </script>
