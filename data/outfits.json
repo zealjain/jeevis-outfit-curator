@@ -3,31 +3,31 @@
     {
       "id": "top",
       "title": "Choose a Top",
-      "blurb": "Start strong—like espresso for your outfit.",
+      "blurb": "Pickypicky-like our fav cat. Choose your fave first!",
       "options": [
         {
           "id": "top-1",
-          "name": "Top 1",
+          "name": "Black Thneed",
           "img": "assets/graphics/TOP%201.png",
-          "desc": "Clean lines with an editorial edge."
+          "desc": "Act like an angel. Dress like crazy."
         },
         {
           "id": "top-2",
-          "name": "Top 2",
+          "name": "Brown Moment",
           "img": "assets/graphics/TOP%202.png",
-          "desc": "Minimal, sharp, camera-ready."
+          "desc": "She's like sophisticated, but fun."
         },
         {
           "id": "top-3",
-          "name": "Top 3",
+          "name": "Blue Checkered",
           "img": "assets/graphics/TOP%203.png",
-          "desc": "Soft structure, high gloss."
+          "desc": "Perfect for dilly-dallying."
         },
         {
           "id": "top-4",
-          "name": "Top 4",
+          "name": "Black Tie Front",
           "img": "assets/graphics/TOP%204%20FULL.png",
-          "desc": "Statement silhouette, cover-worthy."
+          "desc": "Statement silhouette and so jeevi."
         }
       ],
       "dependencies": {}
@@ -35,31 +35,31 @@
     {
       "id": "bottom",
       "title": "Choose a Bottom",
-      "blurb": "Balance is key. Also: pockets.",
+      "blurb": "I know. It's hard to choose one 😭",
       "options": [
         {
           "id": "bottom-1",
-          "name": "Bottom 1",
+          "name": "Black Straight",
           "img": "assets/graphics/BOTTOMS%201.png",
           "desc": "Tailored and timeless."
         },
         {
           "id": "bottom-2",
-          "name": "Bottom 2",
+          "name": "Black Mini-Skirt",
           "img": "assets/graphics/BOTTOMS%202.png",
           "desc": "Swishy, flirty, editor-approved."
         },
         {
           "id": "bottom-3",
-          "name": "Bottom 3",
+          "name": "Cargos",
           "img": "assets/graphics/BOTTOMS%203.png",
-          "desc": "Classic cut with modern attitude."
+          "desc": "Performative or a Performer?"
         },
         {
           "id": "bottom-4",
-          "name": "Bottom 4",
+          "name": "Washed Jeans",
           "img": "assets/graphics/BOTTOMS%204.png",
-          "desc": "Slinky movement, luxe finish."
+          "desc": "Cool and chill like that."
         }
       ],
       "dependencies": {}
@@ -67,72 +67,39 @@
     {
       "id": "accessory",
       "title": "Choose an Accessory",
-      "blurb": "The plot twist your outfit deserves.",
+      "blurb": "The plot twist your outfit deserves 🙏.",
       "options": [
         {
           "id": "acc-1",
-          "name": "Accessory 1",
+          "name": "Red Bag",
           "img": "assets/graphics/ACC%201.png",
-          "desc": "Hands-free polish."
+          "desc": "Your color 💋"
         },
         {
           "id": "acc-2",
-          "name": "Accessory 2",
+          "name": "Parisian Hat",
           "img": "assets/graphics/ACC%202.png",
-          "desc": "Sparkle with subtle bite."
+          "desc": "What you hidin in there?"
         },
         {
           "id": "acc-3",
-          "name": "Accessory 3",
+          "name": "Yankees Hat",
           "img": "assets/graphics/ACC%203.png",
-          "desc": "French-girl flourish."
+          "desc": "The cheetah print omg."
         },
         {
           "id": "acc-4",
-          "name": "Accessory 4",
+          "name": "Maroon Headband",
           "img": "assets/graphics/ACC%204.png",
-          "desc": "Waist-snatching statement."
-        }
-      ],
-      "dependencies": {}
-    },
-    {
-      "id": "jewelry",
-      "title": "Choose Jewelry",
-      "blurb": "Final sparkle. Main-character energy, activated.",
-      "options": [
-        {
-          "id": "j-1",
-          "name": "Gold Huggies",
-          "img": "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?w=800&q=80",
-          "desc": "Delicate hoops that whisper ‘main character.’"
-        },
-        {
-          "id": "j-2",
-          "name": "Layered Necklace",
-          "img": "https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?w=800&q=80",
-          "desc": "Stacked shine; gives neckline a promotion."
-        },
-        {
-          "id": "j-3",
-          "name": "Tennis Bracelet",
-          "img": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80",
-          "desc": "Classic sparkle—serves looks and aces."
-        },
-        {
-          "id": "j-4",
-          "name": "Pearl Studs",
-          "img": "https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?w=800&q=80",
-          "desc": "Elegant, timeless, editorial cool."
+          "desc": "With a book in hand."
         }
       ],
       "dependencies": {}
     }
   ],
   "jokes": [
-    "Outfits don’t make the person—but they definitely RSVP for you.",
-    "Fashion tip: if it has pockets, it’s already iconic.",
-    "Warning: selections may cause mirror selfies.",
-    "Shine so bright, the paparazzi file a ticket."
+    "Editorial? No, darling, autobiographical.",
+    "The forecast? 100% chance of serving looks.",
+    "Heard they making Devil Wears Prada 3 staring YOU!"
   ]
 }
